@@ -1,8 +1,9 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
-from keras.preprocessing import image
-import keras
+import tensorflow as tf
+from tf.keras.preprocessing import image
+import tf.keras
 st.markdown(
     """
     <style>
