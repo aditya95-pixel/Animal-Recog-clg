@@ -97,7 +97,7 @@ if uploaded_file is not None:
         confidence = 1 - confidence
 
     # Display the result with styling
-    st.markdown(f"## Prediction: **{label}**")
+    st.markdown(f'<p class="black-text">## Prediction: **{label}**</p>', unsafe_allow_html=True)
     # Option to upload another image
     st.sidebar.write("Upload another image to classify again.")
 
