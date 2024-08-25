@@ -12,6 +12,9 @@ st.markdown(
         background-color: #e6f7ff;
         color:black;
     }
+    .stApp *{
+        color:black !important;
+    }
 
     /* Custom CSS for the sidebar */
     [data-testid="stSidebar"] {
