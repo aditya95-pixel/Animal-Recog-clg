@@ -4,16 +4,15 @@ import numpy as np
 import tensorflow as tf
 from keras.preprocessing import image
 import keras
+
+# Custom CSS for the app
 st.markdown(
     """
     <style>
     /* Background color for main content */
     .stApp {
         background-color: #e6f7ff;
-        color:black;
-    }
-    .stApp *{
-        color:black !important;
+        color: inherit;  /* Use default color */
     }
 
     /* Custom CSS for the sidebar */
@@ -41,25 +40,28 @@ st.markdown(
         border: none;
         border-top: 2px solid #007acc;
     }
+
+    /* Specific text in black */
+    .black-text {
+        color: black !important;
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 # Load the custom .keras model
 model = keras.models.load_model("model_saved.keras")
 
 # Streamlit app title
-st.title("🐱 Cat vs. 🐶 Dog Classifier")
+st.markdown('<h1 class="black-text">🐱 Cat vs. 🐶 Dog Classifier</h1>', unsafe_allow_html=True)
 
 # Sidebar for input
 st.sidebar.header("Upload Image")
 uploaded_file = st.sidebar.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
 # Add some instructions
-st.markdown("""
-This app uses a Convolutional Neural Network (CNN) model to classify images as either a cat or a dog. 
-Simply upload an image, and the model will predict the class.
-""")
+st.markdown('<p class="black-text">This app uses a Convolutional Neural Network (CNN) model to classify images as either a cat or a dog. Simply upload an image, and the model will predict the class.</p>', unsafe_allow_html=True)
 
 if uploaded_file is not None:
     # Display the uploaded image
@@ -100,5 +102,4 @@ if uploaded_file is not None:
     st.sidebar.write("Upload another image to classify again.")
 
 else:
-    st.info("Please upload an image using the sidebar.")
-
+    st.markdown('<p class="black-text">Please upload an image using the sidebar.</p>', unsafe_allow_html=True)
