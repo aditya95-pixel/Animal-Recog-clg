@@ -10,6 +10,7 @@ st.markdown(
     /* Background color for main content */
     .stApp {
         background-color: #e6f7ff;
+        color:black;
     }
 
     /* Custom CSS for the sidebar */
